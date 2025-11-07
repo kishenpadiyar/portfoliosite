@@ -30,7 +30,7 @@ export interface Education {
 
 export interface Skill {
   name: string;
-  category: "technology" | "project management" | "tool" | "other" | "language" | "framework";
+  category: "technology" | "project management" | "tool" | "language" ;
   proficiency?: "beginner" | "intermediate" | "advanced" | "expert";
 }
 

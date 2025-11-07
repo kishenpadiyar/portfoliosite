@@ -4,8 +4,13 @@ import SkillBadge from "@/components/SkillBadge";
 
 // Force dynamic rendering to ensure fresh data
 export const dynamic = 'force-dynamic';
+export const revalidate = 0; // Disable caching completely
+export const fetchCache = 'force-no-store'; // Prevent fetch caching
 
 export default function ResumePage() {
+  // Get fresh content data
+  const skills = content.skills;
+  
   // Category display labels mapping
   const categoryLabels: Record<string, string> = {
     language: "Language",
@@ -18,7 +23,7 @@ export default function ResumePage() {
 
   // Group skills by category - order: Technology, Tools, Project Management, Language
   const categoryOrder = ["technology", "tool", "project management", "language"];
-  const skillsByCategory = content.skills.reduce(
+  const skillsByCategory = skills.reduce(
     (acc, skill) => {
       if (!acc[skill.category]) {
         acc[skill.category] = [];
@@ -29,6 +34,9 @@ export default function ResumePage() {
     {} as Record<string, typeof content.skills>
   );
 
+  // Force component to re-render with fresh data
+  const renderTimestamp = Date.now();
+  
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
       <div className="max-w-4xl mx-auto">
@@ -61,13 +69,14 @@ export default function ResumePage() {
 
         {/* Skills Section */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            Skills
-          </h2>
-          {/* Debug: Total skills count */}
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-            Total skills: {content.skills.length} | Categories: {Object.keys(skillsByCategory).join(", ")}
-          </p>
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              Skills
+            </h2>
+            <span className="text-xs text-gray-400 dark:text-gray-500">
+              {skills.length} skills loaded
+            </span>
+          </div>
           <div className="space-y-6">
             {categoryOrder
               .filter(category => skillsByCategory[category] && skillsByCategory[category].length > 0)

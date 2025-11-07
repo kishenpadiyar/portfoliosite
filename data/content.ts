@@ -70,30 +70,43 @@ export const content: PortfolioContent = {
     },
   ],
   skills: [
-    // Language
-    { name: "Python", category: "language", proficiency: "advanced" },
-    { name: "Java", category: "language", proficiency: "intermediate" },
-    { name: "SQL", category: "language", proficiency: "advanced" },
-    { name: "C", category: "language", proficiency: "intermediate" },
-    { name: "C++", category: "language", proficiency: "intermediate" },
-    
+        
     // Technology
-    { name: "TypeScript", category: "technology", proficiency: "expert" },
-    { name: "JavaScript", category: "technology", proficiency: "expert" },
-    
+    { name: "RPA (Robotic Process Automation)", category: "technology", proficiency: "advanced" },
+    { name: "Azure AI", category: "technology", proficiency: "advanced" },
+    { name: "Virtual Agents", category: "technology", proficiency: "intermediate" },
+    { name: "Intelligent Document Processing", category: "technology", proficiency: "intermediate" },
+    { name: "Google Cloud Platform", category: "technology", proficiency: "beginner" },
+    { name: "AWS Vertex AI", category: "technology", proficiency: "beginner" },
+     
+     // Tools
+     { name: "UiPath", category: "tool", proficiency: "expert" },
+     { name: "JIRA", category: "tool", proficiency: "expert" },
+     { name: "Rally", category: "tool", proficiency: "expert" },
+     { name: "Visio", category: "tool", proficiency: "expert" },
+     { name: "ChatGPT", category: "tool", proficiency: "advanced" },
+     { name: "Cursor AI", category: "tool", proficiency: "advanced" },
+     { name: "n8n", category: "tool", proficiency: "intermediate" },
+     { name: "Claude Code", category: "tool", proficiency: "intermediate" },
+
     // Project Management
-    { name: "React", category: "project management", proficiency: "expert" },
-    { name: "Next.js", category: "project management", proficiency: "advanced" },
-    { name: "Node.js", category: "project management", proficiency: "advanced" },
-    { name: "Express", category: "project management", proficiency: "advanced" },
+    { name: "Agile and Waterfall", category: "project management", proficiency: "expert" },
+    { name: "Process Analysis and Design", category: "project management", proficiency: "expert" },
+    { name: "Complex Requirements Gathering", category: "project management", proficiency: "expert" },
+    { name: "Stakeholder Management", category: "project management", proficiency: "advanced" },
+    { name: "Project Planning and Tracking", category: "project management", proficiency: "advanced" },
+    { name: "Communication and Collaboration", category: "project management", proficiency: "advanced" },
+    { name: "Documentation and Reporting", category: "project management", proficiency: "advanced" },
+    { name: "Budget Management", category: "project management", proficiency: "advanced" },
+    { name: "Resource Allocation", category: "project management", proficiency: "advanced" },
+    { name: "Quality Assurance", category: "project management", proficiency: "advanced" },
     
-    // Tools
-    { name: "Git", category: "tool", proficiency: "expert" },
-    { name: "Docker", category: "tool", proficiency: "advanced" },
-    { name: "AWS", category: "tool", proficiency: "intermediate" },
-    { name: "Kubernetes", category: "tool", proficiency: "intermediate" },
-    { name: "PostgreSQL", category: "tool", proficiency: "advanced" },
-    { name: "MongoDB", category: "tool", proficiency: "intermediate" },
+    // Language
+    { name: "Python", category: "language", proficiency: "beginner" },
+    { name: "Java", category: "language", proficiency: "beginner" },
+    { name: "SQL", category: "language", proficiency: "beginner" },
+    { name: "C", category: "language", proficiency: "beginner" },
+    { name: "C++", category: "language", proficiency: "beginner" },
   ],
   projects: [
     {
