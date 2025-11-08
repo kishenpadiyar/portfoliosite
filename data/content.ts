@@ -199,9 +199,9 @@ export const content: PortfolioContent = {
     }  
   ],
   social: {
-    //github: "https://github.com/kishen",
+    github: "https://github.com/kishenpadiyar",
     linkedin: "https://www.linkedin.com/in/kishenpadiyar/",
-    //email: "kishen.padiyar@gmail.com",
+    email: "kishen.padiyar@gmail.com",
     //twitter: "https://twitter.com/kishen",
   },
 };

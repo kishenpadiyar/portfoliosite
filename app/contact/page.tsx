@@ -1,5 +1,4 @@
 import { content } from "@/data/content";
-import ContactForm from "@/components/ContactForm";
 
 export default function ContactPage() {
   return (
@@ -16,18 +15,10 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div>
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-              Send a Message
-            </h2>
-            <ContactForm />
-          </div>
-
-          {/* Contact Information */}
-          <div>
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+        {/* Contact Information */}
+        <div className="max-w-2xl mx-auto">
+          <div className="bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 p-8">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 text-center">
               Contact Information
             </h2>
             <div className="space-y-6">
@@ -156,4 +147,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

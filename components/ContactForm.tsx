@@ -9,36 +9,38 @@ export default function ContactForm() {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
+    setErrorMessage("");
 
-    // TODO: Integrate with backend API or email service
-    // For now, this is a client-side only form
-    // Example integration:
-    // try {
-    //   const response = await fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(formData),
-    //   });
-    //   if (response.ok) {
-    //     setStatus('success');
-    //     setFormData({ name: '', email: '', message: '' });
-    //   } else {
-    //     setStatus('error');
-    //   }
-    // } catch (error) {
-    //   setStatus('error');
-    // }
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Simulate API call for demo
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1000);
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+        // Reset to idle after 5 seconds
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage("Network error. Please check your connection and try again.");
+      console.error("Contact form error:", error);
+    }
   };
 
   const handleChange = (
@@ -122,20 +124,20 @@ export default function ContactForm() {
       </button>
 
       {status === "error" && (
-        <p className="text-red-600 dark:text-red-400 text-sm text-center">
-          Something went wrong. Please try again later.
-        </p>
+        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+          <p className="text-red-600 dark:text-red-400 text-sm text-center">
+            {errorMessage || "Something went wrong. Please try again later."}
+          </p>
+        </div>
       )}
 
       {status === "success" && (
-        <p className="text-green-600 dark:text-green-400 text-sm text-center">
-          Thank you! Your message has been sent.
-        </p>
+        <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+          <p className="text-green-600 dark:text-green-400 text-sm text-center">
+            Thank you! Your message has been sent successfully. I'll get back to you soon.
+          </p>
+        </div>
       )}
-
-      <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-        Note: This form is currently client-side only. Backend integration needed for production use.
-      </p>
     </form>
   );
 }

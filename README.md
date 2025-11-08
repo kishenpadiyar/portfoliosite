@@ -80,11 +80,25 @@ To add analytics, uncomment and configure the analytics section in `app/layout.t
 
 ### Contact Form Backend
 
-The contact form is currently client-side only. To make it functional:
+The contact form is integrated with Google Apps Script to save submissions to Google Sheets and send email notifications.
 
-1. Create an API route at `/app/api/contact/route.ts`
-2. Integrate with an email service (SendGrid, Resend, etc.) or form service (Formspree, etc.)
-3. Update `components/ContactForm.tsx` to call your API
+**Setup Instructions:**
+
+1. Follow the detailed guide in `GOOGLE_APPS_SCRIPT_SETUP.md`
+2. Create a Google Sheet with column headers: Timestamp, Name, Email, Message
+3. Create and deploy a Google Apps Script web app (script code provided in setup guide)
+4. Set up environment variables in `.env.local`:
+   ```env
+   GOOGLE_APPS_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+   ```
+5. Test the form submission
+
+**Features:**
+- Saves submissions to Google Sheets
+- Sends email notifications to kishankpadiyar@gmail.com
+- Rate limiting (5 requests per minute)
+- Input validation and sanitization
+- Error handling
 
 ### AI Chat Integration
 
