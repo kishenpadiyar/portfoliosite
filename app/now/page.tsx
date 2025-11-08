@@ -8,7 +8,7 @@ const getCategoryIcon = (category: string) => {
       return "🔨";
     case "exploring":
       return "🔍";
-    case "reading":
+    case "online certifications":
       return "📖";
     default:
       return "✨";
@@ -23,7 +23,7 @@ const getCategoryColor = (category: string) => {
       return "bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300";
     case "exploring":
       return "bg-purple-100 dark:bg-purple-900/20 text-purple-800 dark:text-purple-300";
-    case "reading":
+    case " online certifications":
       return "bg-orange-100 dark:bg-orange-900/20 text-orange-800 dark:text-orange-300";
     default:
       return "bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-300";

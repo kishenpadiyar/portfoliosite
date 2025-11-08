@@ -48,7 +48,7 @@ export interface Project {
 export interface NowItem {
   title: string;
   description: string;
-  category: "learning" | "building" | "exploring" | "reading";
+  category: "learning" | "building" | "exploring" | "online certifications";
   date?: string;
 }
 
