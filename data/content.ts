@@ -90,6 +90,8 @@ export const content: PortfolioContent = {
     // Technology
     { name: "RPA (Robotic Process Automation)", category: "technology", proficiency: "advanced" },
     { name: "Azure AI", category: "technology", proficiency: "advanced" },
+    { name: "Generative AI", category: "technology", proficiency: "intermediate" },
+    { name: "AI Agents", category: "technology", proficiency: "intermediate" },
     { name: "Virtual Agents", category: "technology", proficiency: "intermediate" },
     { name: "Intelligent Document Processing", category: "technology", proficiency: "intermediate" },
     { name: "Google Cloud Platform", category: "technology", proficiency: "beginner" },
@@ -116,6 +118,7 @@ export const content: PortfolioContent = {
     { name: "Budget Management", category: "project management", proficiency: "advanced" },
     { name: "Resource Allocation", category: "project management", proficiency: "advanced" },
     { name: "Quality Assurance", category: "project management", proficiency: "advanced" },
+    { name: "Lean Six Sigma", category: "project management", proficiency: "advanced" },
     
     // Language
     { name: "Python", category: "language", proficiency: "beginner" },
@@ -148,7 +151,7 @@ export const content: PortfolioContent = {
       description: "A dashboard that displays a list of all automation opportunities and the status of the automation projects, including the number of projects, prioritization, robots, and runs",
       //longDescription: "Created a responsive weather dashboard that displays current conditions, hourly and daily forecasts. Includes interactive charts and maps for weather data visualization.",
       techStack: ["UiPath", "Microsoft Office", "Sharepoint"],
-      githubUrl: "https://github.com/kishen/weather-dashboard",
+      //githubUrl: "https://github.com/kishen/weather-dashboard",
       featured: false,
     },
     {
@@ -156,7 +159,7 @@ export const content: PortfolioContent = {
       description: "Personal portfolio website built with CursorAI using Next.js, TypeScript, and Tailwind CSS",
       //longDescription: "Built a web application that generates blog posts, social media content, and marketing copy using OpenAI's GPT models. Features include content templates, history tracking, and export functionality.",
       techStack: ["CursorAI", "Next.js", "TypeScript", "Tailwind CSS"],
-      githubUrl: "https://portfoliosite-chi-blue.vercel.app/",
+      //githubUrl: "https://portfoliosite-chi-blue.vercel.app/",
       featured: true,
     },
   ],
