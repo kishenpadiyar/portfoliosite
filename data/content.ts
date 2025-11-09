@@ -52,10 +52,9 @@ export const content: PortfolioContent = {
 
       ],
       metrics: [
-        "Improved page load time by 50%",
-        "Achieved 99.9% uptime",
-        "Grew user base by 200% in first year",
-      ],
+        "Deployed UiPath automations to improve claims processing turn around time by 15%",
+        "Reduce operating costs by $500k by identified and implemented automations across cross functional business areas",
+        ],
       technologies: ["UiPath", "Visio", "JIRA", "Rally", "PowerBI", "Power Automate", "Tableau", "SQL"],
     },
   ],
